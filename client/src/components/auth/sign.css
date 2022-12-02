@@ -1,0 +1,52 @@
+
+
+.sign {
+    padding: 40px 5%;
+}
+
+.sign form {
+    margin-top: 50px;
+}
+
+.sign input[type='text'], 
+.sign input[type='password'],
+.sign input[type='email']
+{
+    padding: 15px 20px;
+    width: 450px;
+}
+
+.sign button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    /* width: 100%; */
+}
+
+@media (max-width: 500px) {
+    .sign input[type='text'], 
+.sign input[type='password']
+{
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.sign button {
+    width: 100%;
+}
+}
+
+@media (min-width: 800px) {
+    .sign form{
+    width: fit-content;
+    margin: 50px auto;
+}
+
+.sign h2, .sign p {
+    text-align: center;
+}
+
+}

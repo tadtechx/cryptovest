@@ -1,0 +1,100 @@
+.deposit {
+    background-color: rgb(0, 102, 255, 0.2);
+    padding: 20px 0;
+}
+
+.deposit .balance {
+    height: clamp(80px, 16vw, 1000px);
+    padding: 15px 20px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* width: 37vw; */
+    
+}
+
+.deposit .balance span {
+   display: flex;
+   align-items: center;
+   /* border: 2px solid red; */
+   gap: 15px;
+}
+
+.deposit .balance button {
+   
+    /* width: 70%; */
+    /* margin: 0 auto; */
+}
+
+.deposit .dashbody {
+    justify-content: space-between;
+
+}
+
+.balance img {
+    height: 30px;
+}
+
+
+
+@media (min-width: 750px) {
+    .deposit .balance {
+
+        height: 140px;
+        justify-content: center;
+        padding: 15px 0px;
+        margin-bottom: 25px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 37vw;
+        
+    }
+
+    .deposit .balance button {
+   
+        padding: 8px 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+
+    .balance img {
+        height: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .deposit .balance {
+        font-size: larger;
+        width: 20%;
+        height: 14vw;
+        display: block;
+        text-align: center;
+    }
+
+    .deposit .balance span {
+        display: block;
+        margin-bottom: 10px;
+     }
+
+    .balance img {
+        margin: 20px 0;
+    }
+
+    .deposit .dashbody{
+        display: flex;
+        flex-wrap: wrap;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px;
+    }
+}

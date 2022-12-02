@@ -1,0 +1,136 @@
+
+.layout {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; */
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    /* color: rgb(0, 102, 255); */
+    padding: 15px 3vw;
+    /* border: 2px solid red; */
+
+}
+
+.bignav {
+    /* width: 40%; */
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-left: 40px; */
+}
+
+nav h2 {
+    font-size: clamp(24px, 3.5vw, 40px);
+    cursor: pointer;
+}
+
+.vest {
+    color: var(--primary);
+}
+
+li {
+    display: inline;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.navigation button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.smallnav button {
+    width: 35%;
+    padding: 8px 10px;
+}
+
+.smallnav {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    color: white;
+    padding-left: 40px;
+    transition: .7s;
+    display: none;
+}
+
+.smallnav li {
+    display: block;
+    margin-bottom: 25px;
+    list-style-type: none;
+}
+
+.mobilemenu{
+    height: 26px;
+    width: 36px;
+    border-radius: 4px;
+    background-color: var(--primary);
+    
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px 0;
+    display: none;
+}
+
+.mobilemenu-on {
+    background-color: white;
+    height: 26px;
+    width: 36px;
+    border-radius: 4px;
+    
+    
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px 0;
+    display: none;
+}
+
+.mobilemenu .bar {
+    height: 2px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.mobilemenu-on .bar {
+    height: 2px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: var(--primary);
+}
+
+.footer {
+    text-align: center;
+    /* margin: 40px 0; */
+    background-color: black;
+    color: white;
+    padding: 40px 25px;
+}
+
+@media (max-width: 570px) {
+    .bignav {
+        display: none;
+    }
+
+    .mobilemenu, .mobilemenu-on {
+        display: flex;
+    }
+
+    .footer {
+        font-size: smaller;
+    }
+}
