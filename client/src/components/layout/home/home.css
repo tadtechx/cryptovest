@@ -16,17 +16,17 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    height: 62vw;
+    height: 68vw;
     padding: 15vw 4vw;
     /* padding-top: 21vw; */
-    min-height: 305px;
-    max-height: 850px;
+    min-height: 325px;
+    max-height: 950px;
     background-position: center;
 }
 
 .banner h2 {
     /* font-size: 5vw; */
-    /* font-size: 20px; */
+    margin-top: clamp(20px,10vw,30px);
     font-size: clamp(20px,5vw,70px);
 }
 .banner h3 {
@@ -75,7 +75,7 @@ video {
     font-size: var(--h3-font);
 }
 
-.about-us p {
+.about-us p, .plans p {
     font-size: var(--p-font);
     line-height: var(--p-line);
     color: white;
@@ -121,6 +121,16 @@ video {
 }
 
 @media (max-width: 500px) {
+
+    .banner {
+        height: 400px;
+    }
+
+    .banner h2 {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
     .banner p {
         display: none;
     }

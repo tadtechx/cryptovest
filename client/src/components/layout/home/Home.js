@@ -32,14 +32,14 @@ const plans = [
                 <button>START EARNING</button>
             </div>
 
-            <video controls autoPlay>
+            <video controls>
                 <source src={homevid} type='video/mp4'></source>
             </video>
 
             {/* <iframe src="" frameborder="0"></iframe> */}
 
             <div className="about-us">
-                <h2>About Us</h2> <br />
+                <h2>About <span className='vest'>Us</span></h2> <br />
                 <p><b>CRYPTO<span className='vest'>VEST</span></b> is a group of Bitcoin miners, traders, analysts and brokers with valuable experience in the sphere of forex and crypto
                     dedicated their time to research development. Anyone all over the world can become an investor. We provide investment vehicles to
                     investors of all sizes interested in being part of the revolutionary forex, binary option, cryto and bitcoin mining world.
@@ -53,10 +53,14 @@ const plans = [
                     <p>Join millions who have already discovered smarter strategies for investing. Join experience traders and earn greatly.</p>
                 <br /> <br />
                 <h3>Legal Information</h3> <br />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta repellendus suscipit quasi maiores?</p>
+                <p>Luxon Trade is one of the most reliable diversified financial investment service provider in the world. Our fundamental mission is to help customers and clients achieve their financial objectives. With offices locate in the United States, Australia,Canada and headquartered in Uk, Luxon Trade have staffs with over 30 years’ experience in combining financial development and trades. We are committed to pushing the boundaries of what constitutes the highest standards in trades and asset management.
+
+                </p>
                 <br /> <br />
-                <h3>Safety Protection</h3> <br />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta repellendus suscipit quasi maiores?</p>
+                <h3>Safety & Fraud Protection</h3> <br />
+                <p>With over $5.3 Trillion traded daily in the market, we are dedicated to giving our clients their own share of the profit daily. As a leading global market maker, Luxon Trade has one of the World’s Largest Independent traders and fund managers with clients from different parts of the World. Today, as a successful trade investment and asset management company, we are trusted by thousands of clients. Our sterling reputation, dedication to meeting our clients’ needs and innovative approach to business development are some driving forces behind our success.
+
+                </p>
                 <br /> <br />
                 <h3>Our Services</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quaerat laborum adipisci nesciunt, iusto perspiciatis possimus porro.</p>
@@ -66,7 +70,8 @@ const plans = [
             </div> <br /> <br /> <br />
 
             <div className="plans">
-                <h2>Available Plans</h2>
+                <h2>Available <span className='vest'>Plans</span></h2>
+                <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
                 <div className="plan-cards">
                     
 
