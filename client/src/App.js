@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <HashRouter>
           <div className="App">
             <Navigation/>
             {/* <Home /> */}
@@ -61,7 +61,7 @@ class App extends Component {
 
             <Footer/>
           </div>
-        </Router>
+        </HashRouter>
       </Provider>
     );
   }
