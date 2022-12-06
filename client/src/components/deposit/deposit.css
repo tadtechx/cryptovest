@@ -1,6 +1,6 @@
 .deposit {
     background-color: rgb(0, 102, 255, 0.2);
-    padding: 20px 0;
+    padding: 75px 0;
 }
 
 .deposit .balance {
@@ -37,6 +37,68 @@
 
 .balance img {
     height: 30px;
+}
+
+.confirm-modal {
+    background-color: white;
+    width: 94%;
+    max-width: 600px;
+    /* margin-left: clamp(0px,3%,500px); */
+    position: fixed;
+    top: 20%;
+    padding: 25px;
+    border-radius: 6px;
+    transform: translate(-50%);
+    left: 50%;
+    box-shadow: 0 5px 10px 5px lightgrey;
+    transition: .8s;
+    /* transform-origin: center; */
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-modal input {
+    width: 100%;
+    padding: 10px;
+}
+
+.confirm-modal input[type='file'] {
+   display: none;
+}
+
+.confirm-modal label {
+   border: 2px dashed rgb(0, 102, 255);
+    white-space: nowrap;
+   width: 100vw;
+   padding: 10px 20px;
+   /* padding-right: 80%; */
+   border-radius: 4px;
+   cursor: pointer;
+   /* box-sizing: border-box; */
+ }
+
+.copyadd {
+    padding: 8px;
+    background-color: rgb(0, 102, 255, 0.3);
+    /* color: rgb(0, 102, 255); */
+    margin-left: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fundacc {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(0, 102, 255, 0.2);
+    color: rgb(0, 102, 255);
+    border: none;
+    /* padding: 6px 8px; */
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 
@@ -96,5 +158,18 @@
         align-items: center;
         justify-content: space-between;
         padding: 40px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .confirm-modal p {
+        font-size: small;
+     }
+
+     .copyadd {
+        padding: 7px;
+        margin-left: 0px;
+        margin-top: 7px;
     }
 }

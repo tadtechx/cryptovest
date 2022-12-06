@@ -7,11 +7,13 @@ import classnames from "classnames";
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useRef } from 'react';
 
 // Style
 import style from './layout.css';
 
 function Navigation(props) {
+
 
   // const [openMobile, setopenMobile] = useState(true);
   // const openMenu = () => {
@@ -40,7 +42,7 @@ function Navigation(props) {
               </Link></li>
             <li>Home</li>
             <li><Link style={linkStyle} to='/about'>About</Link></li>
-            <li>Contact</li>
+            <li><Link style={linkStyle} to='/contact'>Contact</Link></li>
             <li><Link style={linkStyle} to='/login'> <button style={{display: props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register"> <button style={{display: props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to=""> <button onClick={onLogoutClick} style={{display: props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>
@@ -62,7 +64,7 @@ function Navigation(props) {
             <li><Link style={linkStyle} to='/dashboard'>&#128100; Dashboard</Link></li>
             <li>&#127968; Home</li>
             <li><Link style={linkStyle} to='/about'>&#128101; About</Link></li>
-            <li>&#128222; Contact</li>
+            <li><Link style={linkStyle} to='/contact'>&#128222; Contact</Link></li>
             <li><Link style={linkStyle} to='/signin'> <button>Login</button></Link></li>
             <li><Link style={linkStyle} to='/signup'> <button>Register</button></Link></li>
         </ul>

@@ -7,13 +7,14 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import Navigation from "./components/layout/Navigation.js";
+import Navigation from "./components/layout/Nav3.js";
 import Footer from "./components/layout/Footer.js";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Signup";
 import Login from "./components/auth/Signin";
 import Home from "./components/layout/home/Home.js";
-
+import About from "./components/about/about.js";
+import Contact from "./components/contact/contact";
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard2.js";
@@ -51,6 +52,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />

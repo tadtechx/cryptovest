@@ -8,7 +8,7 @@
   :root {
     /* --primary: #f86a03; */
     --primary: rgb(0, 102, 255);
-    --secondary: #2960ec;
+    --secondary: rgb(0, 178, 263);
     --our-font: 'Inter', sans-serif;
     --bg-color: #f4f6ff;
   
@@ -39,5 +39,9 @@
   
   .App {
     font-family: var(--our-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
   }
   

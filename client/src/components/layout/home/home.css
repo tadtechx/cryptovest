@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     color: white;
     height: 68vw;
-    padding: 15vw 4vw;
+    padding: 16vw 4vw;
     /* padding-top: 21vw; */
     min-height: 325px;
     max-height: 950px;
@@ -36,8 +36,8 @@
     color: rgb(0, 178, 263);
 }
 .banner p {
-    font-size: clamp(14px,1.8vw,28px);
-    /* margin-bottom: 20vw; */
+    font-size: clamp(14px,1.6vw,24px);
+    font-weight: bold;
 }
 
 .banner button, .about-us button, .plan-card button {
@@ -65,10 +65,15 @@ video {
 }
 
 .about-us {
-    padding: 5vw;
+    padding: 6vw;
+    text-align: justify;
 }
 
-.about-us h2 {
+.about-us img {
+    width: 100%;
+}
+
+.about-us h2, .plans h2 {
     font-size: var(--h2-font);
 }
 .about-us h3 {
@@ -81,6 +86,17 @@ video {
     color: white;
 }
 
+.service div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+
+
+.plans{
+    padding: 0 5vw;
+}
+
 .plan-cards {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -89,7 +105,7 @@ video {
 
 .plan-card {
     /* height: 220px; */
-    /* background-color: rgb(0, 0, 0); */
+    background-color: #36454f;
     color: white;
     box-shadow: 0px 0px 10px 1px var(--primary);
     display: flex;
@@ -99,13 +115,27 @@ video {
     border-radius: 7px;
     margin: 20px auto;
     width: 75%;
+    cursor: pointer;
+    transition: .7s;
+
 }
+
+.plan-card:hover {
+    background-color: rgb(0, 178, 263);
+    box-shadow: 0 5px 10px 5px rgb(0, 178, 263, 0.502);
+}
+
+.plan-card:hover hr {
+    border-color: rgb(0, 178, 263);
+}
+
 .plan-card button {
     width: 50%;
     margin: 0 auto;
+    cursor: pointer;
 }
 .plan-card p {
-    border-bottom: 1px solid var(--primary);
+    /* border-bottom: 1px solid var(--primary); */
     width: fit-content;
     margin: 10px auto;
     font-size: var(--card-p-font);
@@ -113,6 +143,80 @@ video {
     /* color: grey; */
 }
 
+.plan-card hr {
+    width: 90%;
+    margin: 0 auto;
+    border-color: var(--primary);
+}
+
+.testimony-cards {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10%;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.testimony-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+.testimony-card {
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 6px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    position: relative;
+    min-width: 100%;
+    scroll-snap-align: start;
+}
+
+.testimony-card img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid rgb(0,230,263);
+    position: absolute;
+    top: 48%;
+    right: 8%;
+}
+
+.testimony-card hr {
+    border: 1px solid rgb(0,230,263);
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.member {
+    background-color: #36454f;
+    padding: 20px 0;
+    border-radius: 8px;
+    width: 40%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: .7s;
+}
+
+.member:hover {
+    background-color: rgb(0, 178, 263);
+    box-shadow: 0 5px 10px 5px rgb(0, 178, 263, 0.502);
+}
+
+.member img {
+    width: 70%;
+}
 
 @media (max-width: 800px) {
     .plan-cards {
@@ -120,7 +224,11 @@ video {
     }
 }
 
-@media (max-width: 500px) {
+.plan-card {
+    width: 90%;
+}
+
+@media (max-width: 550px) {
 
     .banner {
         height: 400px;
@@ -138,4 +246,34 @@ video {
     .plan-cards {
         display: block;
     }
+
+    .team-cards {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .member {
+        width: 80%;
+        margin: 20px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+  .service div {
+    display: block;
+    gap: 40px;
+    /* flex-direction: row-reverse; */
+    /* white-space: nowrap; */
+  }
+
+  .service img {
+    width: 55%;
+    height: 100%;
+    float: right;
+    margin: 30px;
+  }
+
+  .service h3 {
+    margin-bottom: 18px;
+  }
 }

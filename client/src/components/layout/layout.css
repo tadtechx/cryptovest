@@ -6,16 +6,17 @@
     min-height: 100vh; */
 }
 
-
+.navigation {
+    /* margin-bottom: 50px; */
+}
 
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0, 0.6);
+    background-color: rgb(0, 0, 0,0.6);
     position: fixed;
     color: white;
     width: 100%;
-    
     /* color: rgb(0, 102, 255); */
     padding: 15px 3vw;
     /* border: 2px solid red; */
@@ -63,12 +64,14 @@ li {
 
 .smallnav {
     position: fixed;
-    background-color: black;
+    background-color: rgb(0, 0, 0,0.88);
+
     width: 100%;
     color: white;
     padding-left: 40px;
     transition: .7s;
-    display: none;
+    top: 58px;
+    padding-top: 20px;
 }
 
 .smallnav li {
@@ -82,7 +85,7 @@ li {
     width: 36px;
     border-radius: 4px;
     background-color: var(--primary);
-    
+    cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     padding: 7px 0;
@@ -94,8 +97,7 @@ li {
     height: 26px;
     width: 36px;
     border-radius: 4px;
-    
-    
+    cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     padding: 7px 0;
@@ -118,7 +120,7 @@ li {
 
 .footer {
     text-align: center;
-    /* margin: 40px 0; */
+    border-top: 1px solid var(--primary);
     background-color: black;
     color: white;
     padding: 40px 25px;
