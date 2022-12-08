@@ -3,11 +3,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Style
-import './dashboard.css';
+// import './dashboard.css';
 
-import avatar from './assets/profile.png';
 
-import downn from './assets/downner.png';
 
 
 
@@ -22,7 +20,7 @@ const linkStyle = {
   color: 'rgb(0, 102, 255)'
 }
 
-class Dashboard extends Component {
+class Admin extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -54,8 +52,8 @@ class Dashboard extends Component {
         <div className="profile">
           {/* <img src={avatar} alt="avatar" /> */}
           <div>
-            <h4>{user.name}</h4>
-            <p>Hi, {user.name.split(" ")[0]}. Welcome to your dashboard.</p>
+            <h2>Admin</h2>
+            {/* <p>Hi, {user.name.split(" ")[0]}. Welcome to your dashboard.</p> */}
           </div>
         </div>
 
@@ -63,34 +61,35 @@ class Dashboard extends Component {
           <div className="balance">
             <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Add funds</Link></button></span>
             <br />
-            <p>$0</p>
+            <p>${500000}</p>
           </div>
+
+
           <div className="balance">
+            <span><h3>Users</h3> <button><Link style={linkStyle} to='/addfunds'>Get all users</Link></button></span>
+            <br />
+            <p>120</p>
+          </div>
+
+          <div className="balance">
+            <span><h3>Total Received</h3> <button><Link style={linkStyle} to='/addfunds'>View Transactions</Link></button></span>
+            <br />
+            <p>$1000</p>
+          </div>
+
+          <div className="balance">
+            <span><h3>Total Sent</h3> <button><Link style={linkStyle} to='/addfunds'>View Transactions</Link></button></span>
+            <br />
+            <p>$1200</p>
+          </div>
+
+
+
+          {/* <div className="balance">
             <h3>Available Profit</h3> <br />
             <p>$0</p>
-          </div>
-          <div className="balance">
-            <h3>Total Profit</h3> <br />
-            <p>$0</p>
-          </div>
-          <div className="balance">
-            <h3>Investment Bonus</h3> <br />
-            <p>$0</p>
-          </div>
-        </div>
-
-
-        <div className="dropdowns">
-          <div className='stand' onClick={() => toggleChecked(1)} style={{ height: this.state.isOpen === 1 ? '190px' : '60px' }}>
-            <p><span>&#8644; Standard Investment </span> <img src={downn}></img></p> <br /> <br />
-            <p>With our low risk plans, easy access to profit, recurring capital.</p> <br />
-            <button>Investment Plans </button>
-          </div>
-          <div className='stand' onClick={() => toggleChecked(2)} style={{ height: this.state.isOpen === 2 ? '190px' : '60px' }}>
-            <p><span>&#x1f512; Two Factor Authentication </span> <img src={downn}></img></p> <br /> <br />
-            <p>With our low risk plans, easy access to profit, recurring capital.</p> <br />
-            <button>Investment Plans </button>
-          </div>
+          </div> */}
+         
         </div>
 
       </div>
@@ -98,7 +97,7 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+Admin.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -110,4 +109,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(Dashboard);
+)(Admin);

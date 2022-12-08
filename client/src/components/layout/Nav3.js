@@ -11,12 +11,13 @@ import { Link } from 'react-router-dom';
 import style from './layout.css';
 
 
-  class Navigation extends Component {
+
+class Navigation extends Component {
 
 
 constructor () {
   super();
-  this.state = {openMobile: false};
+  this.state = {openMobile: false, blacknav: true};
 }
   
 
@@ -37,7 +38,19 @@ if (!this.state.openMobile) {
 
   const closeMenu = () => {
       this.setState({openMobile: false});
-      window.scroll(0,0)
+      window.scroll(0,0);
+      
+    }
+
+
+
+
+    window.onscroll = () => {
+      if (window.pageYOffset > 10) {
+        this.setState({blacknav: false})
+      } else {
+        this.setState({blacknav: true})
+      }
     }
 
 
@@ -49,7 +62,8 @@ const linkStyle = {
   return (
     <div className="navigation">
 
-    <nav style={{backgroundColor: this.props.bg}}>
+
+    <nav style={{backgroundColor: this.state.blacknav? "" : "black"}}>
         <h2><Link style={linkStyle} to='/'>Crypto<span className='vest'>Vest</span></Link></h2>
         <ul className='bignav'>
             <li><Link style={linkStyle} to='/dashboard'>
@@ -62,6 +76,7 @@ const linkStyle = {
             <li><Link style={linkStyle} to='/login'> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register"> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to=""> <button onClick={onLogoutClick} style={{display: this.props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>
+            <li><Link style={linkStyle} to="/admin"> <button style={{display: this.props.auth.user.id === "6389f94afc61dd07cfb02702"? "block" : "none"}}>Admin</button></Link></li>
         </ul>
 
         <div 
@@ -84,6 +99,8 @@ const linkStyle = {
             <li><Link style={linkStyle} to='/login' onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register" onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to="" onClick={closeMenu}> <button onClick={onLogoutClick} style={{display: this.props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>
+            <li><Link style={linkStyle} to="/admin"> <button style={{display: this.props.auth.user.id === "6389f94afc61dd07cfb02702"? "block" : "none"}}>Admin</button></Link></li>
+
         </ul>
     </div>
 

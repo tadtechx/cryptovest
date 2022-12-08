@@ -35,6 +35,12 @@ router.post("/register", (req, res) => {
         password: req.body.password
       });
 
+      User.find().then(alldat => {
+        
+          return res.status(400).json({ alldat });
+        });
+
+
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {

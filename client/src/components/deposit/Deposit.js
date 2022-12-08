@@ -16,10 +16,10 @@ import usdt from './assets/usdt.png';
 
 const methods = [
     { id: 1, name: "Bitcoin", address: "3FzJDsJDkn92C8wC1NrNXVzsuggiJoahHd" },
-    { id: 2, name: "BNB", address: "3FzJDsJDkn92C8wC1NrNXVzsuggiJoahHd" },
-    { id: 3, name: "Ethereum", address: "3FzJDsJDkn92C8wC1NrNXVzsuggiJoahHd" },
-    { id: 4, name: "Litecoin", address: "3FzJDsJDkn92C8wC1NrNXVzsuggiJoahHd" },
-    { id: 5, name: "USDT", address: "3FzJDsJDkn92C8wC1NrNXVzsuggiJoahHd" },
+    { id: 2, name: "BNB", address: "bnb1elx3at8cs5f3gmsv0m099aezw2537grhp0wq8v" },
+    { id: 3, name: "Ethereum", address: "0x62Bdc3e45BeDfeaB2BCc57a4BD6C729beC01595" },
+    { id: 4, name: "Litecoin", address: "M7uxJqnxwTv6N1G9uYQcPaS4WMyod21SRJ" },
+    { id: 5, name: "USDT (Trc20)", address: "TRTbPBWrzjC16EwK3Jne7DojFgC6CbXVDg" },
     
 ]
 

@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   axios
@@ -46,9 +47,12 @@ export const loginUser = userData => dispatch => {
 export const setCurrentUser = decoded => {
   return {
     type: SET_CURRENT_USER,
-    payload: decoded
+    payload: decoded,
+    
   };
 };
+
+
 
 // User loading
 export const setUserLoading = () => {

@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 
+
+
 class Register extends Component {
   constructor() {
     super();
@@ -52,7 +54,11 @@ class Register extends Component {
   render() {
     const { errors } = this.state;
 
+    console.log(errors.email);
+    console.log(alldat);
+
     return (
+
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">

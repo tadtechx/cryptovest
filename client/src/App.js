@@ -17,8 +17,10 @@ import About from "./components/about/about.js";
 import Contact from "./components/contact/contact";
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import AdminRoute from "./components/private-route/AdminRoute";
 import Dashboard from "./components/dashboard/Dashboard2.js";
-import Deposit from "./components/deposit/Deposit.js"
+import Deposit from "./components/deposit/Deposit.js";
+import Admin from "./components/admin/admin";
 
 import "./App.css";
 
@@ -41,27 +43,35 @@ if (localStorage.jwtToken) {
     window.location.href = "./login";
   }
 }
+
+
+
 class App extends Component {
   render() {
+
+    
     return (
       <Provider store={store}>
-        <HashRouter>
+        <Router>
           <div className="App">
+
+
             <Navigation/>
-            {/* <Home /> */}
+            
             <Route exact path="/" component={Home} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
             <Switch>
+              <AdminRoute exact path="/admin" component={Admin} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />
             </Switch>
 
             <Footer/>
           </div>
-        </HashRouter>
+        </Router>
       </Provider>
     );
   }
