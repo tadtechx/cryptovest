@@ -1,33 +1,6 @@
 // Style
 import './sign.css';
 
-// function SignUp() {
-//   return (
-//     <div className="sign">
-
-//     <h2>Sign Up</h2> <br />
-//     <p>The better way to save and invest</p>
-
-//     <form action="">
-//         <input type="text" placeholder='First name' /> <br /> <br />
-//         <input type="text" placeholder='Last name' /> <br /> <br /> <br />
-//         <label htmlFor="">Username</label> <br /> <br />
-//         <input type="text" placeholder='Username' /> <br /> <br /> <br />
-//         <label htmlFor="">Email address</label> <br /> <br />
-//         <input type="text" placeholder='Email address' />
-//         <br /> <br /> <br />
-//         <label htmlFor="">Password</label> <br /> <br />
-//         <input type="password" /> 
-//         <br /> <br /> <br />
-//         <input type="checkbox" />
-//         <label htmlFor=""> I agree to Terms and Conditions</label> <br /> <br />
-//         <p>Got an account? Login</p> <br />
-//         <button>Get Started</button>
-//     </form>
-
-//     </div>
-//   );
-// }
 
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
@@ -44,6 +17,7 @@ class SignUp extends Component {
       email: "",
       password: "",
       password2: "",
+      balance: 0,
       errors: {}
     };
   }
@@ -74,7 +48,8 @@ class SignUp extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      balance: 0,
     };
 
     this.props.registerUser(newUser, this.props.history);

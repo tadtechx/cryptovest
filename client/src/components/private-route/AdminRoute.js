@@ -10,7 +10,7 @@ const AdminRoute = ({ component: Component, auth, ...rest }) => (
       auth.user.id === "6389f94afc61dd07cfb02702" ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/" />
+        <Redirect to="*" />
       )
     }
   />

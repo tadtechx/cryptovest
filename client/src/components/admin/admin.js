@@ -59,20 +59,20 @@ class Admin extends Component {
 
         <div className="dashbody">
           <div className="balance">
-            <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Add funds</Link></button></span>
+            <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Send to User</Link></button></span>
             <br />
             <p>${500000}</p>
           </div>
 
 
           <div className="balance">
-            <span><h3>Users</h3> <button><Link style={linkStyle} to='/addfunds'>Get all users</Link></button></span>
+            <span><h3>Users</h3> <button><Link style={linkStyle} to='/allusers'>Get all users</Link></button></span>
             <br />
             <p>120</p>
           </div>
 
           <div className="balance">
-            <span><h3>Total Received</h3> <button><Link style={linkStyle} to='/addfunds'>View Transactions</Link></button></span>
+            <span><h3>Total Received</h3> <button><Link style={linkStyle} to='/alltransactions'>View Transactions</Link></button></span>
             <br />
             <p>$1000</p>
           </div>

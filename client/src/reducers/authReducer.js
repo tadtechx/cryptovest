@@ -8,7 +8,6 @@ const initialState = {
   isAuthenticated: false,
   user: {},
   loading: false,
-  isAdmin: "false"
 };
 
 export default function(state = initialState, action) {

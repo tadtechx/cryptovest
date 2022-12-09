@@ -32,13 +32,11 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        balance: 0,
       });
 
-      User.find().then(alldat => {
-        
-          return res.status(400).json({ alldat });
-        });
+
 
 
       // Hash password before saving in database
@@ -56,6 +54,11 @@ router.post("/register", (req, res) => {
   });
 });
 
+
+      // User.find().then(alldat => {
+        
+      //     return res.status(400).json({ alldat });
+      //   });
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
@@ -86,8 +89,11 @@ router.post("/login", (req, res) => {
         // Create JWT Payload
         const payload = {
           id: user.id,
+          email: user.email,
           name: user.name
         };
+
+        console.log(user.email);
 
         // Sign token
         jwt.sign(

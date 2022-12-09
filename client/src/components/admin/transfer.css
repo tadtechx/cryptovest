@@ -1,0 +1,42 @@
+
+
+.transfer-page {
+    text-align: center;
+    padding-top: 95px;
+    padding: 95px 6vw;
+}
+
+.baq {
+    /* text-align: left; */
+    /* border: 1px solid; */
+    width: 90px;
+    display: flex;
+    padding: 4px;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px 5px lightgrey;
+    cursor: pointer;
+    /* justify-content: space-around; */
+}
+
+.transfer-page input {
+    padding: 7px 10px;
+    width: 280px;
+}
+
+.srch {
+    margin-top: 20px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.transfer-page button {
+    padding: 10px 16px;
+    width: 120px;
+}
+
+.transfer-page .success {
+    margin-right: 40px;
+}

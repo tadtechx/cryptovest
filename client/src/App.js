@@ -15,6 +15,10 @@ import Login from "./components/auth/Signin";
 import Home from "./components/layout/home/Home.js";
 import About from "./components/about/about.js";
 import Contact from "./components/contact/contact";
+import Errorpage from "./components/error/error";
+import TransactionData from "./components/data/Transactions";
+import AllUsers from "./components/data/AllUSers";
+import Transfer from "./components/admin/Transfer";
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import AdminRoute from "./components/private-route/AdminRoute";
@@ -49,27 +53,34 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
 
-    
+
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
 
 
-            <Navigation/>
-            
-            <Route exact path="/" component={Home} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
+            <Navigation />
             <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              {/* <Switch> */}
               <AdminRoute exact path="/admin" component={Admin} />
+              <AdminRoute exact path="/transfer" component={Transfer} />
+              <AdminRoute exact path="/allusers" component={AllUsers} />
+              <AdminRoute exact path="/alltransactions" component={TransactionData} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />
+              {/* </Switch> */}
+
+              <Route component={Errorpage} />
+
             </Switch>
 
-            <Footer/>
+            <Footer />
           </div>
         </Router>
       </Provider>

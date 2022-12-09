@@ -4,12 +4,16 @@ const Schema = mongoose.Schema;
 // Create Schema
 const TransactionSchema = new Schema({
   ID: {
-    type: Number,
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
     required: true
   },
   isSuccessful: {
     type: Boolean,
-    required: true
+    default: false
   },
   date: {
     type: Date,

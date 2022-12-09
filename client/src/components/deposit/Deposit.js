@@ -1,7 +1,10 @@
 
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { userDeposit } from "../../actions/fundActions";
+import classnames from "classnames";
 
 // Style
 import './deposit.css';
@@ -41,8 +44,32 @@ class Deposit extends Component {
         this.state = { modal: false,
             theMethod: methods.filter(obj => {
                 return obj.id === 3;
-            })
+            }),
+            ID: "",
+            email: "",
+            amount: 0,
+            isSuccessful: false,
+            proof: "",
         }};
+
+        onChange = e => {
+            this.setState({ [e.target.id]: e.target.value });
+          };
+        
+          onSubmit = e => {
+            e.preventDefault();
+        
+            const newDeposit = {
+              ID: Math.random()*200000,
+              email: this.props.auth.user.id,
+              amount: this.state.amount,
+              isSuccessful: false,
+                proof: this.state.proof,
+
+            };
+        
+            this.props.userDeposit(newDeposit);
+          };
 
 
     render() {
@@ -57,6 +84,7 @@ class Deposit extends Component {
                 })
             })
             console.log(this.state.theMethod[0].name);
+            console.log(this.props.auth.user);
         };
 
         const closeModal = () => {
@@ -107,15 +135,34 @@ class Deposit extends Component {
                         {this.state.theMethod[0].address} <button className="copyadd" onClick={() => { navigator.clipboard.writeText(this.state.theMethod[0].address) }}>Copy</button>
                     </p>
                     <br /> <br />
-                    <form>
+                    <form noValidate onSubmit={this.onSubmit}>
 
-                        <input type="number" placeholder='$'></input> <br /> <br /> <br />
+                        <input 
+                        type="number"
+                        placeholder='$'
+                        onChange={this.onChange}
+                        value={this.state.amount}
+                        ></input> <br /> <br /> <br />
+
+                        <input 
+                        type="email"
+                        placeholder='Enter email'
+                        onChange={this.onChange}
+                        value={this.props.auth.id}
+                        ></input> <br /> <br /> <br />
 
                         <label for="proof">
                             <b>Upload proof</b>
                             
                             </label>  <br /> <br />
-                        <input id="proof" type="file" placeholder='$'></input> <br /> <br />
+                            <input 
+                            id="proof"
+                        type="file"
+                        
+                        onChange={this.onChange}
+                        value={this.state.proof}
+                        >
+                            </input> <br /> <br />
                         <button className="fundacc">Fund Account</button> <br />
                     </form>
                     <br /><br />
@@ -126,4 +173,20 @@ class Deposit extends Component {
     }
 }
 
-export default Deposit;
+Deposit.propTypes = {
+    userDeposit: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+
+  };
+
+  const mapStateToProps = state => ({
+    auth: state.auth,
+  });
+
+
+// export default Deposit;
+
+export default connect(
+    mapStateToProps,
+    { userDeposit }
+  )(withRouter(Deposit));

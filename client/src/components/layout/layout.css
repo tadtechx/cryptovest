@@ -65,7 +65,7 @@ li {
 .smallnav {
     position: fixed;
     background-color: rgb(0, 0, 0,0.88);
-
+    z-index: 9;
     width: 100%;
     color: white;
     padding-left: 40px;

@@ -1,0 +1,65 @@
+
+
+
+.transactions {
+    overflow-x: scroll;
+}
+
+.transactions table {
+    width: 100%;
+    text-align: center;
+    /* border: 1px dashed grey; */
+    border-collapse: collapse;
+    /* margin:  20px; */
+}
+
+.transactions td {
+    padding: 12px;
+    font-size: clamp(12px,1.3vw,36px);
+    border: 1px dashed grey;
+    border-collapse: collapse;
+}
+
+.transactions th {
+    padding: 15px;
+    font-size: clamp(14px,1.5vw,36px);
+    border: 1px dashed grey;
+    border-collapse: collapse;
+}
+
+.transactions tr {
+    /* border: 1px solid; */
+}
+
+.transactions tr:nth-child(odd){
+    background-color: #cfdcfd;
+    color: var(--primary);
+}
+
+.success {
+    background-color: greenyellow;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.fail {
+    background-color: red;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.transfer {
+    background-color: rgb(255, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
