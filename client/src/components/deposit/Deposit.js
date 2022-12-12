@@ -47,9 +47,10 @@ class Deposit extends Component {
             }),
             ID: "",
             email: "",
-            amount: 0,
+            amount: 75,
             isSuccessful: false,
             proof: "",
+            network: "",
         }};
 
         onChange = e => {
@@ -61,11 +62,11 @@ class Deposit extends Component {
         
             const newDeposit = {
               ID: Math.random()*200000,
-              email: this.props.auth.user.id,
+              email: this.props.auth.user.email,
               amount: this.state.amount,
               isSuccessful: false,
                 proof: this.state.proof,
-
+                network: this.state.theMethod[0].name,
             };
         
             this.props.userDeposit(newDeposit);
@@ -148,7 +149,7 @@ class Deposit extends Component {
                         type="email"
                         placeholder='Enter email'
                         onChange={this.onChange}
-                        value={this.props.auth.id}
+                        value={this.props.auth.user.email}
                         ></input> <br /> <br /> <br />
 
                         <label for="proof">

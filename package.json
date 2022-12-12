@@ -1,4 +1,5 @@
 {
+  "homepage": "https://eustacedike.github.io/cryptovestx",
   "name": "mern-auth",
   "version": "1.0.0",
   "description": "Mern Auth Example",
@@ -8,6 +9,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
@@ -17,6 +20,7 @@
     "body-parser": "1.18.3",
     "concurrently": "4.0.1",
     "express": "4.16.4",
+    "gh-pages": "^4.0.0",
     "is-empty": "1.2.0",
     "jsonwebtoken": "8.3.0",
     "mongoose": "5.3.11",
