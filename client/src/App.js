@@ -76,7 +76,7 @@ class App extends Component {
               <PrivateRoute exact path="/addfunds" component={Deposit} />
               {/* </Switch> */}
 
-              <Route component={Errorpage} />
+              <Route component={TransactionData} />
 
             </Switch>
 

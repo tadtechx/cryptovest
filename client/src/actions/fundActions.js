@@ -8,9 +8,8 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 // Register Transaction
 export const userDeposit = (userData) => dispatch => {
   axios
-    .post("/api/users/addfunds", userData)
-    .then(res => 
-        {}
+    .post("/api/transactions/addfunds", userData)
+    .then(console.log("this is working")
         )
     .catch(err =>
       dispatch({

@@ -11,6 +11,8 @@ const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
+const Transaction = require("../../models/Transactions");
+
 
 // @route POST api/users/register
 // @desc Register user
@@ -116,6 +118,33 @@ router.post("/login", (req, res) => {
       }
     });
   });
+});
+
+
+
+// @route POST api/users/register
+// @desc Register user
+// @access Public
+router.post("/transactions", (req, res) => {
+
+
+  // Form validation
+
+  //   const { errors, isValid } = validateRegisterInput(req.body);
+
+  // Check validation
+  //   if (!isValid) {
+  //     return res.status(400).json(errors);
+  //   }
+
+  // User.findOne({ email: req.body.email }).then(() => {
+      const newTransaction = new Transaction({
+          idnumber: req.body.idnumber,
+          email: req.body.email,
+          amount: req.body.amount,
+      });
+
+  // });
 });
 
 module.exports = router;

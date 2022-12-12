@@ -38,7 +38,7 @@ function TransactionData() {
           <td>LTC</td>
           <td>fredbrick@yahoo.com</td>
           <td>25/10/2022</td>
-          <td><button className="success">Successful</button></td>
+          <td><button className="pending"></button></td>
           
         </tr>
       </table>

@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const TransactionSchema = new Schema({
-  ID: {
-    type: String,
-    required: true
+  idnumber: {
+    type: Number,
+    default: 0
+    // required: true
   },
   email: {
     type: String,
-    required: true
+    default: "bush7@gmail.com"
+    // required: true
   },
   isSuccessful: {
     type: Boolean,
@@ -25,4 +27,4 @@ const TransactionSchema = new Schema({
   }
 });
 
-module.exports = User = mongoose.model("transactions", TransactionSchema);
+module.exports = Transactions = mongoose.model("transactions", TransactionSchema);

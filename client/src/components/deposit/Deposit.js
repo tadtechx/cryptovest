@@ -61,7 +61,7 @@ class Deposit extends Component {
             e.preventDefault();
         
             const newDeposit = {
-              ID: Math.random()*200000,
+              idnumber: Math.random()*200000,
               email: this.props.auth.user.email,
               amount: this.state.amount,
               isSuccessful: false,

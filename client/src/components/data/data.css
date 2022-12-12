@@ -55,6 +55,22 @@
     cursor: pointer;
 }
 
+.pending::after{
+    content: "Pending";
+}
+
+.pending {
+    /* content: "pending"; */
+    background-color: orange;
+    padding: 3px 5px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
 .transfer {
     background-color: rgb(255, 0, 0, 0.7);
     color: white;
