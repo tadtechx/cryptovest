@@ -11,7 +11,12 @@ const Transactions = require("../../models/Transactions");
 // @access Public
 router.post("/addfunds", (req, res) => {
 
- 
+     
+        const newTransactions = new Transactions({
+            idnumber: req.body.idnumber,
+            email: req.body.email,
+            amount: req.body.amount,
+        });
 
         newTransactions
             .save()
