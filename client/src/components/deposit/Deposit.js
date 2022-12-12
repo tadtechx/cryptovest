@@ -45,9 +45,8 @@ class Deposit extends Component {
             theMethod: methods.filter(obj => {
                 return obj.id === 3;
             }),
-            ID: "",
             email: "",
-            amount: 75,
+            amount: 0,
             isSuccessful: false,
             proof: "",
             network: "",
@@ -141,6 +140,7 @@ class Deposit extends Component {
                         <input 
                         type="number"
                         placeholder='$'
+                        id="amount"
                         onChange={this.onChange}
                         value={this.state.amount}
                         ></input> <br /> <br /> <br />
@@ -149,7 +149,10 @@ class Deposit extends Component {
                         type="email"
                         placeholder='Enter email'
                         onChange={this.onChange}
+                        id="email"
                         value={this.props.auth.user.email}
+                        readOnly
+                        style={{backgroundColor: "lightgrey", border: "1px solid black"}}
                         ></input> <br /> <br /> <br />
 
                         <label for="proof">

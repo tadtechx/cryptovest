@@ -1,5 +1,9 @@
 
 import React, { Component } from "react";
+import axios from "axios";
+
+import { getUsers } from "../../actions/getUsers";
+
 
 
 // Style
@@ -43,6 +47,13 @@ function AllUsers() {
         </tr>
         
       </table>
+
+
+      <button onClick={() =>
+        getUsers()
+      }>
+        <h1>Get Them</h1>
+      </button>
     </div>
   );
 }

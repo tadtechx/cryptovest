@@ -125,26 +125,42 @@ router.post("/login", (req, res) => {
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/transactions", (req, res) => {
+// router.post("/transactions", (req, res) => {
 
 
-  // Form validation
+//   // Form validation
 
-  //   const { errors, isValid } = validateRegisterInput(req.body);
+//   //   const { errors, isValid } = validateRegisterInput(req.body);
 
-  // Check validation
-  //   if (!isValid) {
-  //     return res.status(400).json(errors);
-  //   }
+//   // Check validation
+//   //   if (!isValid) {
+//   //     return res.status(400).json(errors);
+//   //   }
 
-  // User.findOne({ email: req.body.email }).then(() => {
-      const newTransaction = new Transaction({
-          idnumber: req.body.idnumber,
-          email: req.body.email,
-          amount: req.body.amount,
-      });
+//   // User.findOne({ email: req.body.email }).then(() => {
+//       const newTransaction = new Transaction({
+//           idnumber: req.body.idnumber,
+//           email: req.body.email,
+//           amount: req.body.amount,
+//       });
 
-  // });
-});
+//   // });
+// });
+
+router.route('/fetchusers').get(function (req,res){
+  User.find({email: "great1@email.com"})
+  .exec(function(err,user){
+    if (err){
+      console.log(err)
+    } else {
+      console.log(user.data)
+    }
+  }
+  
+  )
+}
+
+)
+
 
 module.exports = router;

@@ -5,12 +5,10 @@ const Schema = mongoose.Schema;
 const TransactionSchema = new Schema({
   idnumber: {
     type: Number,
-    default: 0
     // required: true
   },
   email: {
     type: String,
-    default: "bush7@gmail.com"
     // required: true
   },
   isSuccessful: {
