@@ -96,6 +96,7 @@ const linkStyle = {
             {/* <li>&#127968; Home</li> */}
             <li><Link style={linkStyle} to='/about' onClick={closeMenu}> About</Link></li>
             <li><Link style={linkStyle} to='/contact' onClick={closeMenu}> Contact</Link></li>
+            <li><Link style={linkStyle} to='/invest' onClick={closeMenu}> Invest</Link></li>
             <li><Link style={linkStyle} to='/login' onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register" onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to="" onClick={closeMenu}> <button onClick={onLogoutClick} style={{display: this.props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>

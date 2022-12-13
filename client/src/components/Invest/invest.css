@@ -1,0 +1,40 @@
+
+.invest {
+    background-color: rgb(0, 102, 255, 0.2);
+    padding: 105px 0;
+}
+
+
+
+
+.invest-form {
+    background-color: white;
+    width: 94%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 6px;
+
+    box-shadow: 0 5px 10px 5px lightgrey;
+    transition: .8s;
+
+}
+
+.invest-form input, .invest-form select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.invest-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.p-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}

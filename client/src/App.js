@@ -21,9 +21,11 @@ import AllUsers from "./components/data/AllUSers";
 import Transfer from "./components/admin/Transfer";
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import AdminRoute from "./components/private-route/AdminRoute";
 import Dashboard from "./components/dashboard/Dashboard2.js";
 import Deposit from "./components/deposit/Deposit.js";
+import Invest from "./components/Invest/Invest";
+
+import AdminRoute from "./components/private-route/AdminRoute";
 import Admin from "./components/admin/admin";
 
 import "./App.css";
@@ -59,8 +61,9 @@ class App extends Component {
         <Router>
           <div className="App">
 
-
+            
             <Navigation />
+            {/* <Invest/> */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/register" component={Register} />
@@ -74,6 +77,7 @@ class App extends Component {
               <AdminRoute exact path="/alltransactions" component={TransactionData} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />
+              <PrivateRoute exact path="/invest" component={Invest} />
               {/* </Switch> */}
 
               <Route component={AllUsers} />

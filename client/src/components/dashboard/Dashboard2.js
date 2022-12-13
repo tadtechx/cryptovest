@@ -63,10 +63,11 @@ class Dashboard extends Component {
           <div className="balance">
             <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Add funds</Link></button></span>
             <br />
-            <p>$0</p>
+            <p>${user.balance}</p>
           </div>
           <div className="balance">
-            <h3>Available Profit</h3> <br />
+            
+            <span><h3>Available Profit</h3> <button><Link style={linkStyle} to='/invest'>Invest</Link></button></span>
             <p>$0</p>
           </div>
           <div className="balance">

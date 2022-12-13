@@ -135,7 +135,7 @@ function Home() {
                                 <p>{eachPlan.duration} Days</p> <hr></hr>
                                 <p>{eachPlan.roi}% Return on Investment</p>  <hr></hr> <br />
                                 <h3>${eachPlan.min} - ${eachPlan.max}</h3> <br />
-                                <button>INVEST NOW</button>
+                                <button><Link style={{color: 'unset', textDecoration: "none"}} to="/invest">INVEST NOW</Link></button>
                             </div>
                         )
                     })}

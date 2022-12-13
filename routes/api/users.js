@@ -57,10 +57,10 @@ router.post("/register", (req, res) => {
 });
 
 
-      // User.find().then(alldat => {
-        
-      //     return res.status(400).json({ alldat });
-      //   });
+// User.find().then(alldat => {
+
+//     return res.status(400).json({ alldat });
+//   });
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
@@ -92,7 +92,8 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           email: user.email,
-          name: user.name
+          name: user.name,
+          balance: user.balance,
         };
 
         console.log(user.email);
@@ -147,20 +148,25 @@ router.post("/login", (req, res) => {
 //   // });
 // });
 
-router.route('/fetchusers').get(function (req,res){
-  User.find({email: "great1@email.com"})
-  .exec(function(err,user){
-    if (err){
-      console.log(err)
-    } else {
-      console.log(user.data)
-    }
-  }
-  
-  )
-}
+// router.route('/fetchusers').get((req, res) => {
+//   User.find((error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       res.json.data
+//     }
+//   })
+// })
 
-)
-
+router.get("/fetchusers", async (req, res) => {
+  console.log("Hey I'm in the back end , the ticker is: ");
+  //error
+  // const query = { symbol: req.symbol };
+  const thisUser = await User.findOne();
+  res.json({
+    name: thisUser.name,
+    email: thisUser.email,
+  });
+});
 
 module.exports = router;

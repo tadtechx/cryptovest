@@ -20,7 +20,7 @@ nav {
     /* color: rgb(0, 102, 255); */
     padding: 15px 3vw;
     /* border: 2px solid red; */
-
+    z-index: 5;
 }
 
 .bignav {

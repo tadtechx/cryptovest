@@ -83,8 +83,7 @@ class Deposit extends Component {
                     return obj.id === b;
                 })
             })
-            console.log(this.state.theMethod[0].name);
-            console.log(this.props.auth.user);
+    
         };
 
         const closeModal = () => {
