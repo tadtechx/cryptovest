@@ -123,50 +123,45 @@ router.post("/login", (req, res) => {
 
 
 
-// @route POST api/users/register
-// @desc Register user
-// @access Public
-// router.post("/transactions", (req, res) => {
 
 
-//   // Form validation
-
-//   //   const { errors, isValid } = validateRegisterInput(req.body);
-
-//   // Check validation
-//   //   if (!isValid) {
-//   //     return res.status(400).json(errors);
-//   //   }
-
-//   // User.findOne({ email: req.body.email }).then(() => {
-//       const newTransaction = new Transaction({
-//           idnumber: req.body.idnumber,
-//           email: req.body.email,
-//           amount: req.body.amount,
-//       });
-
-//   // });
-// });
-
-// router.route('/fetchusers').get((req, res) => {
-//   User.find((error, data) => {
-//     if (error) {
-//       return next(error)
-//     } else {
-//       res.json.data
-//     }
-//   })
-// })
 
 router.get("/fetchusers", async (req, res) => {
-  console.log("Hey I'm in the back end , the ticker is: ");
-  //error
-  // const query = { symbol: req.symbol };
-  const thisUser = await User.findOne();
-  res.json({
-    name: thisUser.name,
-    email: thisUser.email,
-  });
+
+  // const thisUser = await User.findOne({email:"chibuike@yahoo.com"});
+  const thisUser = await User.find();
+
+  res.send(
+   thisUser
+  );
+  // res.json({
+  //   name: thisUser.name,
+  //   email: thisUser.email,
+  // });
+});
+
+
+
+router.get("/finduser", async (req, res) => {
+
+  
+
+  const param = req.query.email;
+
+  User.findOne({email: param})
+  .then(user => {
+    if (user){
+    res.send(user);} else {
+      res.send("User not found");
+    }
+  })
+  
+  // const searchedUser = await User.findOne({email: param});
+  
+  // res.send(
+  //   searchedUser
+  // //  req.query.email
+  // );
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@
 
 
 .transactions {
+    padding: 105px 3vw;
     overflow-x: scroll;
 }
 

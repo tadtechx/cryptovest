@@ -59,7 +59,7 @@ class Admin extends Component {
 
         <div className="dashbody">
           <div className="balance">
-            <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Send to User</Link></button></span>
+            <span><h3>Balance</h3> <button><Link style={linkStyle} to='/transfer'>Send to User</Link></button></span>
             <br />
             <p>${500000}</p>
           </div>
