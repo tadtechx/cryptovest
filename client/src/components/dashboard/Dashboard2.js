@@ -17,6 +17,9 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
 
+import UserTxn from './UserTxns';
+
+
 const linkStyle = {
   textDecoration: 'none',
   color: 'rgb(0, 102, 255)'
@@ -79,6 +82,8 @@ class Dashboard extends Component {
             <p>$0</p>
           </div>
         </div>
+
+        <UserTxn/>
 
 
         <div className="dropdowns">

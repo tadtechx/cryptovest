@@ -1,17 +1,21 @@
 
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+
 import axios from "axios";
 
 
 // Style
-import style from "./data.css";
+// import style from "./data.css";
 
 
 
 
 
 
-class TransactionData extends Component {
+class UserTxn extends Component {
  
 
   constructor() {
@@ -22,24 +26,27 @@ class TransactionData extends Component {
   
 
   render(){
+    const { user } = this.props.auth;
 
     const getTransactions = () => {
       axios.get("api/transactions/fetchtransactions")
-        // .then(response => console.log(response))
+        // .then(response => console.log(response.data.filter(forThisUser=>{return forThisUser.email === user.email})))
         .then((response) => {
-        this.setState({ allDeposits: response.data});
+        this.setState({ allDeposits: response.data.filter(forThisUser=>{return forThisUser.email === user.email})});
         });
   
     };
 
     getTransactions()
   return (
-    <div className="transactions">
+    <div className="transactions"
+    style={{backgroundColor: "white"}}
+    >
+        <h4>My Transactions</h4> <br/> <br/>
       <table>
         <tr>
           <th>Transaction ID</th>
           <th>Method</th>
-          <th>User Email</th>
           <th>Amount</th>
           <th>Date</th>
           <th>Status</th>
@@ -49,7 +56,6 @@ class TransactionData extends Component {
             <tr>
               <td>{eachTxn._id.split("").reverse().join("")}</td>
               <td>BTC</td>
-              <td>{eachTxn.email}</td>
               <td>${eachTxn.amount}</td>
               <td>{eachTxn.date.slice(0,10)}</td>
               <td><button className={eachTxn.isSuccessful? "success" : "pending"}>
@@ -58,28 +64,22 @@ class TransactionData extends Component {
             </tr>
           )
         })}
-        <tr>
-          <td>21558704</td>
-          <td>BTC</td>
-          <td>greatone@email.com</td>
-          <td>${30}</td>
-          <td>11/12/2022</td>
-          <td><button className="success">Successful</button></td>
-          
-        </tr>
-        <tr>
-          <td>21538704</td>
-          <td>ETH</td>
-          <td>taddtch@email.com</td>
-          <td>${21}</td>
-          <td>01/09/2022</td>
-          <td><button className="fail">Failed</button></td>
-          
-        </tr>
        
       </table>
     </div>
   );}
 }
 
-export default TransactionData;
+UserTxn.propTypes = {
+    auth: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  
+  export default connect(
+    mapStateToProps,
+  )(UserTxn);
+
+// export default UserTxn;

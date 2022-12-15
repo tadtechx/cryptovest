@@ -80,7 +80,7 @@ class App extends Component {
               <PrivateRoute exact path="/invest" component={Invest} />
               {/* </Switch> */}
 
-              <Route component={AllUsers} />
+              {/* <Route component={AllUsers} /> */}
 
             </Switch>
 

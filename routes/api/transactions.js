@@ -26,7 +26,15 @@ router.post("/addfunds", (req, res) => {
 });
 
 
-   
+router.get("/fetchtransactions", async (req, res) => {
+
+    const theTransactions = await Transactions.find();
+  
+    res.send(
+        theTransactions
+    );
+  });
+
 
 
 module.exports = router;

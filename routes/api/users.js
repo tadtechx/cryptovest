@@ -164,4 +164,53 @@ router.get("/finduser", async (req, res) => {
   // );
 });
 
+
+
+
+  
+
+router.post("/sendmoney", (req, res) => {
+
+  
+  // const receivingUser =
+  User.findOne({email: req.body.email})
+  .then(user =>{
+    console.log(user.email);
+
+    User.findOneAndUpdate({email: user.email},{balance: user.balance + req.body.amount },{new: true},
+    function(
+      err,
+      inventory
+    ) {
+      if (err) {
+        console.log("err", err);
+        res.status(500).send(err);
+      } else {
+        console.log("success");
+        res.send(inventory);
+      }
+    }
+    );
+  })
+
+  // const param = req.query.email;
+
+  // User.findOneAndUpdate({email: "bush7@gmail.com"},{balance: 21 },{new: true},
+  //   function(
+  //     err,
+  //     inventory
+  //   ) {
+  //     if (err) {
+  //       console.log("err", err);
+  //       res.status(500).send(err);
+  //     } else {
+  //       console.log("success");
+  //       res.send(inventory);
+  //     }
+  //   }
+  //   );
+
+});
+
+
 module.exports = router;

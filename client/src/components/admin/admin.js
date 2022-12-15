@@ -78,7 +78,7 @@ class Admin extends Component {
           </div>
 
           <div className="balance">
-            <span><h3>Total Sent</h3> <button><Link style={linkStyle} to='/addfunds'>View Transactions</Link></button></span>
+            <span><h3>Total Sent</h3> <button><Link style={linkStyle} to='/alltransactions'>View Transactions</Link></button></span>
             <br />
             <p>$1200</p>
           </div>
