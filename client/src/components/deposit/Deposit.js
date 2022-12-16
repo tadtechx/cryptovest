@@ -208,7 +208,7 @@ class Deposit extends Component {
                         style={{backgroundColor: "lightgrey", border: "1px solid black"}}
                         ></input> <br /> <br /> <br />
 
-                        <label for="proof">
+                        {/* <label for="proof">
                             <b>Upload proof</b>
                             
                             </label>  <br /> <br />
@@ -219,7 +219,8 @@ class Deposit extends Component {
                         onChange={this.onChange}
                         value={this.state.proof}
                         >
-                            </input> <br /> <br />
+                            </input> */}
+                            <br /> <br />
                         <button className="fundacc">Fund Account</button> <br />
                     </form>
                     <br /><br />

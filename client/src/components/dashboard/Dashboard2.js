@@ -35,7 +35,15 @@ class Dashboard extends Component {
 
   constructor() {
     super();
-    this.state = { checked: 0, isOpen: 0, thisUserBalance: 0, thisUserDueDate: "" };
+    this.state = {
+      checked: 0,
+      isOpen: 0,
+      thisUserBalance: 0,
+      thisUserDueDate: "",
+      thisUserInvested: 0,
+      thisUserRoi: 0,
+      thisUserBonus: 0,
+    };
   }
 
   render() {
@@ -90,15 +98,23 @@ class Dashboard extends Component {
             <span><h3>Available Profit</h3> <button><Link style={linkStyle} to='/invest'>Invest</Link></button></span>
             <br/>
             <p>${0}</p> <br/>
-            <p><b>Due Date:</b> {this.state.thisUserDueDate.slice(0,10)}</p>
+            {/* <p><b>Due Date:</b> {this.state.thisUserDueDate.slice(0,10)}</p> */}
           </div>
           <div className="balance">
             <h3>Total Profit</h3> <br />
-            <p>${this.state.thisUserInvested * (this.state.thisUserRoi/100)}</p>
+            <p>
+            {Number.isNaN(this.state.thisUserInvested * (this.state.thisUserRoi/100))? `$0`:
+              `$${Math.floor(this.state.thisUserInvested * (this.state.thisUserRoi/100))}`
+            } 
+              </p>
           </div>
           <div className="balance">
             <h3>Investment Bonus</h3> <br />
-            <p>${Math.floor(this.state.thisUserInvested * (this.state.thisUserBonus/100))}</p>
+            <p>
+            {Number.isNaN(this.state.thisUserInvested * (this.state.thisUserBonus/100))? `$0`:
+              `$${Math.floor(this.state.thisUserInvested * (this.state.thisUserBonus/100))}`
+            } 
+              </p>
           </div>
         </div>
 

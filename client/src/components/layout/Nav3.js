@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import style from './layout.css';
 
 
+import logo from "./logo1.jpg";
+
 
 class Navigation extends Component {
 
@@ -64,7 +66,10 @@ const linkStyle = {
 
 
     <nav style={{backgroundColor: this.state.blacknav? "" : "black"}}>
-        <h2><Link style={linkStyle} to='/' onClick={closeMenu}>Crypto<span className='vest'>Vest</span></Link></h2>
+        <h2><Link style={linkStyle} to='/' onClick={closeMenu}>
+        {/* <img style={{height: "40px"}} src={logo}></img> */}
+        Crypto<span className='vest'>Vest</span>
+        </Link></h2>
         <ul className='bignav'>
             <li><Link style={linkStyle} to='/dashboard'>
              
