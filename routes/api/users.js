@@ -172,7 +172,6 @@ router.get("/finduser", async (req, res) => {
 router.post("/sendmoney", (req, res) => {
 
   
-  // const receivingUser =
   User.findOne({email: req.body.email})
   .then(user =>{
     console.log(user.email);
@@ -193,22 +192,49 @@ router.post("/sendmoney", (req, res) => {
     );
   })
 
-  // const param = req.query.email;
+});
 
-  // User.findOneAndUpdate({email: "bush7@gmail.com"},{balance: 21 },{new: true},
-  //   function(
-  //     err,
-  //     inventory
-  //   ) {
-  //     if (err) {
-  //       console.log("err", err);
-  //       res.status(500).send(err);
-  //     } else {
-  //       console.log("success");
-  //       res.send(inventory);
-  //     }
-  //   }
-  //   );
+//Add duration to current date to get due date
+Date.prototype.addDays = function(days) {
+  var date = new Date(this.valueOf());
+  date.setDate(date.getDate() + days);
+  return date;
+}
+
+var date = new Date();
+
+console.log(date.addDays(5));
+
+router.post("/newinvestment", (req, res) => {
+
+ 
+  User.findOne({email: req.body.email})
+  .then(user =>{
+    // console.log(user.email);
+
+    User.findOneAndUpdate({email: user.email},
+      {roi: req.body.roi,
+        invested: req.body.invested,
+        duration: req.body.duration,
+        bonus: req.body.bonus,
+        investdate: date.addDays(req.body.duration),
+        hasAPlan: true,
+        balance: user.balance - req.body.invested, 
+      },{new: true},
+    function(
+      err,
+      inventory
+    ) {
+      if (err) {
+        console.log("err", err);
+        res.status(500).send(err);
+      } else {
+        console.log("success");
+        res.send(inventory);
+      }
+    }
+    );
+  })
 
 });
 

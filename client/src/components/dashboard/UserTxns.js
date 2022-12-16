@@ -49,18 +49,18 @@ class UserTxn extends Component {
           <th>Method</th>
           <th>Amount</th>
           <th>Date</th>
-          <th>Status</th>
+          {/* <th>Status</th> */}
         </tr>
         {this.state.allDeposits.map(eachTxn => {
           return (
             <tr>
               <td>{eachTxn._id.split("").reverse().join("")}</td>
-              <td>BTC</td>
+              <td>{eachTxn.method}</td>
               <td>${eachTxn.amount}</td>
               <td>{eachTxn.date.slice(0,10)}</td>
-              <td><button className={eachTxn.isSuccessful? "success" : "pending"}>
+              {/* <td><button className={eachTxn.isSuccessful? "success" : "pending"}> */}
                 {/* {eachTxn.isSuccessful? "Successful" : "Pending"} */}
-                </button></td>
+                {/* </button></td> */}
             </tr>
           )
         })}

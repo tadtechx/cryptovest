@@ -16,7 +16,6 @@ export default function(state = initialState, action) {
       return {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
-        // isAdmin: !isEmpty(action.payload.email),
         user: action.payload,
       };
     case USER_LOADING:

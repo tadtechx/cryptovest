@@ -22,6 +22,9 @@ const TransactionSchema = new Schema({
   amount: {
     type: Number,
     default: 0,
+  },
+  method: {
+    type: String,
   }
 });
 

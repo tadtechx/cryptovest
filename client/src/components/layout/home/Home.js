@@ -43,7 +43,7 @@ function Home() {
                 <button><Link style={{color: 'unset', textDecoration: "none"}} to="/addfunds">START EARNING</Link></button>
             </div>
 
-            <video controls>
+            <video controls autoplay>
                 <source src={homevid} type='video/mp4'></source>
             </video>
 

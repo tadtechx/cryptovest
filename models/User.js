@@ -23,8 +23,24 @@ const UserSchema = new Schema({
     type: Number,
     default: 0,
   },
-  transactions: {
-    type: Array,
+  
+  roi: {
+    type: Number,
+  },
+  invested: {
+    type: Number,
+  },
+  bonus: {
+    type: Number,
+  },
+  duration: {
+    type: Number,
+  },
+  hasAPlan: {
+    type: Boolean,
+  },
+  investdate: {
+    type: Date,
   }
 });
 

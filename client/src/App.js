@@ -63,14 +63,14 @@ class App extends Component {
 
             
             <Navigation />
-            {/* <Invest/> */}
+            
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
-              {/* <Switch> */}
+            
               <AdminRoute exact path="/admin" component={Admin} />
               <AdminRoute exact path="/transfer" component={Transfer} />
               <AdminRoute exact path="/allusers" component={AllUsers} />
@@ -78,9 +78,9 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />
               <PrivateRoute exact path="/invest" component={Invest} />
-              {/* </Switch> */}
+              
 
-              {/* <Route component={AllUsers} /> */}
+              <Route component={Errorpage} />
 
             </Switch>
 

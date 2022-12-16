@@ -55,6 +55,11 @@
     /* transform-origin: center; */
 }
 
+.modal2 {
+    width: 70%;
+    text-align: center;
+}
+
 .modal-head {
     display: flex;
     justify-content: space-between;

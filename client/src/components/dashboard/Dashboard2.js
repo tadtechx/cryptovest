@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import axios from 'axios';
+
 // Style
 import './dashboard.css';
 
@@ -33,7 +35,7 @@ class Dashboard extends Component {
 
   constructor() {
     super();
-    this.state = { checked: 0, isOpen: 0 };
+    this.state = { checked: 0, isOpen: 0, thisUserBalance: 0, thisUserDueDate: "" };
   }
 
   render() {
@@ -51,13 +53,28 @@ class Dashboard extends Component {
       }
     }
 
+    const getBalance = () => {
+      axios.get("api/users/fetchusers")
+        // .then(response => console.log(response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].balance))
+        .then((response) => {
+        this.setState({ thisUserBalance: response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].balance});
+        this.setState({ thisUserInvested: response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].invested});
+        this.setState({ thisUserRoi: response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].roi});
+        this.setState({ thisUserBonus: response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].bonus});
+        this.setState({ thisUserDueDate: response.data.filter(forThisUser=>{return forThisUser.email === user.email})[0].investdate});
+        });
+  
+    };
+
+    getBalance()
+
     return (
       <div className="dashboard">
 
         <div className="profile">
           {/* <img src={avatar} alt="avatar" /> */}
           <div>
-            <h4>{user.name}</h4>
+            <h4>{user.name}</h4> <br/>
             <p>Hi, {user.name.split(" ")[0]}. Welcome to your dashboard.</p>
           </div>
         </div>
@@ -66,20 +83,22 @@ class Dashboard extends Component {
           <div className="balance">
             <span><h3>Balance</h3> <button><Link style={linkStyle} to='/addfunds'>Add funds</Link></button></span>
             <br />
-            <p>${user.balance}</p>
+            <p>${this.state.thisUserBalance}</p>
           </div>
           <div className="balance">
             
             <span><h3>Available Profit</h3> <button><Link style={linkStyle} to='/invest'>Invest</Link></button></span>
-            <p>$0</p>
+            <br/>
+            <p>${0}</p> <br/>
+            <p><b>Due Date:</b> {this.state.thisUserDueDate.slice(0,10)}</p>
           </div>
           <div className="balance">
             <h3>Total Profit</h3> <br />
-            <p>$0</p>
+            <p>${this.state.thisUserInvested * (this.state.thisUserRoi/100)}</p>
           </div>
           <div className="balance">
             <h3>Investment Bonus</h3> <br />
-            <p>$0</p>
+            <p>${Math.floor(this.state.thisUserInvested * (this.state.thisUserBonus/100))}</p>
           </div>
         </div>
 

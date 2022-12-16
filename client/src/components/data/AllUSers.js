@@ -21,7 +21,7 @@ class AllUsers extends Component {
     super();
     this.state = {
       allRegistered: [],
-      modal: false,
+      modal: false, modal2: false,
       receiver: "bush7@gmail.com",
       amount: 0,
     };
@@ -56,7 +56,7 @@ class AllUsers extends Component {
 
 
     const sendFunds = () => {
-      axios.post("/api/users/sendmoney", {email: this.state.receiver, amount: this.state.amount})
+      axios.post("/api/users/sendmoney", {email: this.state.receiver, amount: parseInt(this.state.amount)})
         .then(console.log("this worked")
         )
         .catch(err => {
@@ -84,6 +84,7 @@ class AllUsers extends Component {
 
     const closeModal = () => {
       this.setState({ modal: false })
+      this.setState({ modal2: true })
     };
     return (
       <div className="transactions">
@@ -134,6 +135,18 @@ class AllUsers extends Component {
 
 
         </div>
+
+        <div className="confirm-modal modal2"
+                    style={{ transform: this.state.modal2 ? 'translate(-50%) scale(1)' : 'translate(-50%) scale(0)' }}
+                >
+                    <div className="modal-head">
+                        <h3></h3><p onClick={()=>{this.setState({ modal2: false });}} style={{cursor: 'pointer'}}>&#10006;</p>
+                    </div>
+                    <br/>
+                    <h2>Funds Sent</h2> <br/>
+                    <h1>&#9989;</h1> <br/>
+                    {/* <p>Wait for approval....</p> */}
+                </div>
 
       </div>
     );

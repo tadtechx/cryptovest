@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Style
-// import './dashboard.css';
+import style from './transfer.css';
 
 
 
@@ -46,42 +46,44 @@ class Admin extends Component {
       }
     }
 
+    console.log(this.props.auth);
+
     return (
       <div className="dashboard">
 
         <div className="profile">
           {/* <img src={avatar} alt="avatar" /> */}
           <div>
-            <h2>Admin</h2>
+            <h2>Admin Dashboard</h2>
             {/* <p>Hi, {user.name.split(" ")[0]}. Welcome to your dashboard.</p> */}
           </div>
         </div>
 
         <div className="dashbody">
-          <div className="balance">
+          {/* <div className="balance">
             <span><h3>Balance</h3> <button><Link style={linkStyle} to='/transfer'>Send to User</Link></button></span>
             <br />
             <p>${500000}</p>
-          </div>
+          </div> */}
 
 
-          <div className="balance">
-            <span><h3>Users</h3> <button><Link style={linkStyle} to='/allusers'>Get all users</Link></button></span>
+          <div className="balance adm">
+            <span><h3>All Users</h3> <button><Link style={linkStyle} to='/allusers'>Get all users</Link></button></span>
             <br />
-            <p>120</p>
+            <p>Get user data and send money to users here...</p>
           </div>
 
-          <div className="balance">
-            <span><h3>Total Received</h3> <button><Link style={linkStyle} to='/alltransactions'>View Transactions</Link></button></span>
+          <div className="balance adm">
+            <span><h3>Transactions</h3> <button><Link style={linkStyle} to='/alltransactions'>View Transactions</Link></button></span>
             <br />
-            <p>$1000</p>
+            <p>View all transactions here...</p>
           </div>
 
-          <div className="balance">
+          {/* <div className="balance">
             <span><h3>Total Sent</h3> <button><Link style={linkStyle} to='/alltransactions'>View Transactions</Link></button></span>
             <br />
             <p>$1200</p>
-          </div>
+          </div> */}
 
 
 

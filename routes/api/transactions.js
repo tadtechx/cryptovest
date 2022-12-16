@@ -16,6 +16,7 @@ router.post("/addfunds", (req, res) => {
             idnumber: req.body.idnumber,
             email: req.body.email,
             amount: req.body.amount,
+            method: req.body.network
         });
 
         newTransactions

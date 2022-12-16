@@ -190,6 +190,9 @@ video {
 
 .testimony-card hr {
     border: 1px solid rgb(0,230,263);
+    position: absolute;
+    top: 59%;
+    width: 86%;
 }
 
 .team-cards {
@@ -280,8 +283,21 @@ video {
     margin-bottom: 18px;
   }
 
+  .testimony-cards {
+    gap: 7%;
+    /* justify-content: space-around; */
+    }
+
   .testimony-card {
     min-width: 40%;
-    /* background-color: red; */
+  }
+
+  .testimony-card p{
+    font-size: 20px;
+}
+
+.testimony-card img {
+    /* top: 51%; */
+    right: 6%;
 }
 }
