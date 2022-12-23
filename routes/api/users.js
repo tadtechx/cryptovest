@@ -57,10 +57,7 @@ router.post("/register", (req, res) => {
 });
 
 
-// User.find().then(alldat => {
 
-//     return res.status(400).json({ alldat });
-//   });
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public

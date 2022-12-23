@@ -81,7 +81,7 @@ const linkStyle = {
             <li><Link style={linkStyle} to='/login'> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register"> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to=""> <button onClick={onLogoutClick} style={{display: this.props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>
-            <li><Link style={linkStyle} to="/admin"> <button style={{display: this.props.auth.user.email === "great1@email.com"? "block" : "none"}}>Admin</button></Link></li>
+            <li><Link style={linkStyle} to="/admin"> <button style={{display: this.props.auth.user.email === "CRYPTOVEST716@GMAIL.COM"? "block" : "none"}}>Admin</button></Link></li>
         </ul>
 
         <div 
@@ -105,7 +105,7 @@ const linkStyle = {
             <li><Link style={linkStyle} to='/login' onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Login</button></Link></li>
             <li><Link style={linkStyle} to="/register" onClick={closeMenu}> <button style={{display: this.props.auth.isAuthenticated? "none" : "block"}}>Register</button></Link></li>
             <li><Link style={linkStyle} to="" onClick={closeMenu}> <button onClick={onLogoutClick} style={{display: this.props.auth.isAuthenticated? "block" : "none"}}>Log Out</button></Link></li>
-            <li><Link style={linkStyle} to="/admin" onClick={closeMenu}> <button style={{display: this.props.auth.user.email === "great1@email.com"? "block" : "none"}}>Admin</button></Link></li>
+            <li><Link style={linkStyle} to="/admin" onClick={closeMenu}> <button style={{display: this.props.auth.user.email === "CRYPTOVEST716@GMAIL.COM"? "block" : "none"}}>Admin</button></Link></li>
 
         </ul>
     </div>

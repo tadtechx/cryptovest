@@ -23,6 +23,7 @@ import Transfer from "./components/admin/Transfer";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard2.js";
 import Deposit from "./components/deposit/Deposit.js";
+import Withdraw from "./components/dashboard/Withdraw";
 import Invest from "./components/Invest/Invest";
 
 import AdminRoute from "./components/private-route/AdminRoute";
@@ -77,6 +78,7 @@ class App extends Component {
               <AdminRoute exact path="/alltransactions" component={TransactionData} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/addfunds" component={Deposit} />
+              <PrivateRoute exact path="/withdraw" component={Withdraw} />
               <PrivateRoute exact path="/invest" component={Invest} />
               
 

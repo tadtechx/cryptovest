@@ -43,7 +43,7 @@ function Home() {
                 <button><Link style={{color: 'unset', textDecoration: "none"}} to="/addfunds">START EARNING</Link></button>
             </div>
 
-            <video controls autoplay>
+            <video controls autoPlay loop>
                 <source src={homevid} type='video/mp4'></source>
             </video>
 
@@ -200,7 +200,7 @@ function Home() {
                         <img src={kingery} /> <br />
                         <div>
                             <h3>Charlotte Jones</h3>
-                            <p>CEO</p>
+                            <p>CTO</p>
                         </div>
                     </div>
                 </div>

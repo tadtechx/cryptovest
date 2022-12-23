@@ -126,56 +126,7 @@ class Deposit extends Component {
 
                 </div>
 
-                <div className="confirm-modal"
-                    style={{ transform: this.state.modal ? 'translate(-50%) scale(1)' : 'translate(-50%) scale(0)' }}
-                >
-                    <div className="modal-head">
-                        <h3>{this.state.theMethod[0].name}</h3><p onClick={closeModal} style={{cursor: 'pointer'}}>&#10006;</p>
-                    </div>
-                    <br />
-                    <p>
-                        {this.state.theMethod[0].name} Wallet Address: <br />
-                        {this.state.theMethod[0].address} <button className="copyadd" onClick={() => { navigator.clipboard.writeText(this.state.theMethod[0].address) }}>Copy</button>
-                    </p>
-                    <br /> <br />
-                    <form noValidate onSubmit={this.onSubmit}>
-
-                        <input 
-                        type="number"
-                        placeholder='$'
-                        id="amount"
-                        onChange={this.onChange}
-                        value={this.state.amount}
-                        ></input> <br /> <br /> <br />
-
-                        <input 
-                        type="email"
-                        placeholder='Enter email'
-                        onChange={this.onChange}
-                        id="email"
-                        value={this.props.auth.user.email}
-                        readOnly
-                        style={{backgroundColor: "lightgrey", border: "1px solid black"}}
-                        ></input> <br /> <br /> <br />
-
-                        <label for="proof">
-                            <b>Upload proof</b>
-                            
-                            </label>  <br /> <br />
-                            <input 
-                            id="proof"
-                        type="file"
-                        
-                        onChange={this.onChange}
-                        value={this.state.proof}
-                        >
-                            </input> <br /> <br />
-                        <button className="fundacc">Fund Account</button> <br />
-                    </form>
-                    <br /><br />
-                    <b><center>Charge: 0.02% + 2 USD</center></b>
-                </div>
-
+                
                 <div className="confirm-modal"
                     style={{ transform: this.state.modal ? 'translate(-50%) scale(1)' : 'translate(-50%) scale(0)' }}
                 >
