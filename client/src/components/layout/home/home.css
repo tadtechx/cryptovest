@@ -27,12 +27,12 @@
 .banner h2 {
     /* font-size: 5vw; */
     margin-top: clamp(20px,10vw,30px);
-    font-size: clamp(20px,5vw,70px);
+    font-size: clamp(30px,5vw,70px);
 }
 .banner h3 {
     /* font-size: 3.5vw; */
     /* font-size: 12px; */
-    font-size: clamp(12px,3.5vw,48px);
+    font-size: clamp(18px,3.5vw,48px);
     color: rgb(0, 178, 263);
 }
 .banner p {
@@ -66,7 +66,7 @@ video {
 
 .about-us {
     padding: 6vw;
-    text-align: justify;
+    text-align: left;
 }
 
 .about-us img {
@@ -88,7 +88,11 @@ video {
 
 .service div {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+  }
+
+  .service img {
+    margin-bottom: 18px;
   }
 
 
@@ -147,6 +151,50 @@ video {
     width: 90%;
     margin: 0 auto;
     border-color: var(--primary);
+}
+
+.why-choose {
+    background-color: grey;
+    padding: 30px 3vw;
+    margin-bottom: 40px;
+}
+
+.why-choose h1 {
+   font-size: var(--h2-font);
+}
+
+.why-choose h2 {
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.why-choose p {
+    font-size: var(--p-font);
+    line-height: var(--p-line);
+    margin-top: 10px;
+}
+
+.choose-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-card {
+      /* height: 220px; */
+      background-color: rgb(0, 0, 0);
+      color: white;
+      padding: 20px 10px;
+      border-radius: 7px;
+      margin: 20px auto;
+      width: 45%;
+      cursor: pointer;
+      transition: .7s;
+}
+
+.choose-card img {
+    height: 30px;
 }
 
 .testimony-cards {
@@ -249,6 +297,10 @@ video {
         display: none;
     }
 
+    .choose-card {
+        width: 95%;
+  }
+
     .plan-cards {
         display: block;
     }
@@ -265,23 +317,33 @@ video {
 }
 
 @media (min-width: 1200px) {
-  .service div {
-    display: block;
+  .service {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 40px;
-    /* flex-direction: row-reverse; */
+    flex-direction: row-reverse;
     /* white-space: nowrap; */
   }
 
   .service img {
-    width: 55%;
-    height: 100%;
-    float: right;
+    min-width: 40%;
+    width: 40%;
+    /* height: 100%; */
+    /* float: right; */
     margin: 30px;
+  }
+
+  .service div {
+    width: 60%;
   }
 
   .service h3 {
     margin-bottom: 18px;
   }
+
+  .choose-card {
+    width: 30%;
+}
 
   .testimony-cards {
     gap: 7%;

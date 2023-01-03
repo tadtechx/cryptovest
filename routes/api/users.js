@@ -93,7 +93,7 @@ router.post("/login", (req, res) => {
           balance: user.balance,
         };
 
-        console.log(user.email);
+        // console.log(user.email);
 
         // Sign token
         jwt.sign(

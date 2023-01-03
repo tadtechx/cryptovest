@@ -7,7 +7,6 @@ import { connect } from "react-redux";
 
 import classnames from "classnames";
 
-// import formspree from '@formspree/react';
 
 const linkStyle = {
     textDecoration: 'none',
@@ -20,7 +19,7 @@ class Withdraw extends Component {
     constructor() {
         super();
         this.state = {
-            // modal2: false,
+            modal2: false,
             amount: 0,
             network: "",
             email: "",
@@ -34,34 +33,28 @@ class Withdraw extends Component {
 
 
     onSubmit = e => {
-        // e.preventDefault();
+        e.preventDefault();
 
-        // if (this.state.amount > this.state.thisUserBalance){
-        //     alert("Insufficient Balance")
-        // }
+        if (this.state.amount > this.state.thisUserBalance){
+            alert("Insufficient Balance")
+        }
 
-        // else if ((this.state.amount === 0) || (this.state.amount === "0")) {
-        //     alert("Enter an amount above 0")
-        // }
+        else if ((this.state.amount === 0) || (this.state.amount === "0")) {
+            alert("Enter an amount above 0")
+        }
 
-        // else  {
-        // this.setState({ modal2: true });
-        // }
+        else  {
+        this.setState({ modal2: true });
 
-        fetch("/send", {
-            method: "post",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(this.state)
-        }).then(res=>res.json())
-        .then(data=>{
-        alert(data.message)
-        this.setState({amount: ""});
-        this.setState({network: ""});
-        this.setState({email: ""});
-        this.setState({address: ""});
-        }).catch(err=>{
-        console.log(err)
-        })
+        axios({
+            method: "POST",
+            url: "https://formspree.io/f/mrgvzaoe",
+            data: {Amount: this.state.amount, Network: this.state.network, Email: this.state.email, Address: this.state.address, Balance: this.state.thisUserBalance},
+        }).then(response => {console.log(response)
+        }).catch(error => {console.log(error)})
+        }
+
+
         }
     
     
@@ -129,6 +122,7 @@ class Withdraw extends Component {
                         value={this.state.network}
                         id="network"
                         >
+                            <option value="BTC">Select Network</option>
                             <option value="BTC">Bitcoin</option>
                             <option value="ETH">Ethereum</option>
                             <option value="BNB">BNB</option>
@@ -164,9 +158,9 @@ class Withdraw extends Component {
                         <br /> <br />
                         <button
                             className="fundacc"
-                            onClick={() => { }}
+                            // onClick={() => { }}
                             type="submit"
-                        // disabled={state.submitting}
+                        
                         >Withdraw</button> <br />
                     </form>
                     <br /><br />
