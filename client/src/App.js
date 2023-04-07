@@ -28,8 +28,12 @@ import Invest from "./components/Invest/Invest";
 
 import AdminRoute from "./components/private-route/AdminRoute";
 import Admin from "./components/admin/admin";
+import axios from "axios";
 
 import "./App.css";
+
+
+axios.defaults.baseURL = "./";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

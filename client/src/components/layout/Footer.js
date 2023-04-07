@@ -17,7 +17,7 @@ function Footer() {
 
         <ul>
             <li>Privacy and Policy</li>
-            <li>Terms & Condition</li>
+            <li>Terms & Condition</li> <br/>
             <li>AML Policy</li>
             <li>Buy Crypto</li>
             <li>Help Center</li>
@@ -28,7 +28,7 @@ function Footer() {
         <div className="reserved">
             <p>&copy;2018-2022 Cryptovest All Rights Reserved</p>
             <br />
-            <p>26A Dacre Road, Hitchin</p>
+            <p>26A Dacre Road, Hitchin Hertfordshire, United Kingdom - SG5 1QJ</p>
         </div>
         <div className="socials">
 

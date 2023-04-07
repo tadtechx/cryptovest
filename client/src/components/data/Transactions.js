@@ -9,7 +9,7 @@ import style from "./data.css";
 
 
 
-
+axios.defaults.baseURL = "http://127.0.0.1:5000";
 
 class TransactionData extends Component {
  

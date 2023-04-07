@@ -13,7 +13,7 @@ const linkStyle = {
     color: "unset",
 };
 
-
+axios.defaults.baseURL = "http://127.0.0.1:5000";
 class Withdraw extends Component {
 
     constructor() {

@@ -17,7 +17,7 @@ import './invest.css';
 // import lite from './assets/lite.png';
 // import usdt from './assets/usdt.png';
 
-
+axios.defaults.baseURL = "http://127.0.0.1:5000";
 
 const plans = [
     { id: 1, name: "Starter", refbonus: 7, duration: 12, roi: 144, min: 50, max: 499 },

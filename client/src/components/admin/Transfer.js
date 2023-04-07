@@ -8,7 +8,7 @@ import axios from "axios";
 
 import style from "./transfer.css";
 
-
+axios.defaults.baseURL = "http://127.0.0.1:5000";
 // const findUser = (arg) => {
 //     axios.get("api/users/finduser", {params: {email: arg}})
 //       .then(response => console.log(response.data))

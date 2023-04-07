@@ -21,6 +21,7 @@ import { logoutUser } from "../../actions/authActions";
 
 import UserTxn from './UserTxns';
 
+axios.defaults.baseURL = "http://127.0.0.1:5000";
 
 const linkStyle = {
   textDecoration: 'none',

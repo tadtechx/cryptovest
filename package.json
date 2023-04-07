@@ -1,5 +1,4 @@
 {
-  "homepage": "https://eustacedike.github.io/cryptovestx",
   "name": "mern-auth",
   "version": "1.0.0",
   "description": "Mern Auth Example",
@@ -22,6 +21,7 @@
     "concurrently": "4.0.1",
     "dotenv": "^16.0.3",
     "express": "4.16.4",
+    "firebase": "^9.19.1",
     "gh-pages": "^4.0.0",
     "is-empty": "1.2.0",
     "jsonwebtoken": "8.3.0",

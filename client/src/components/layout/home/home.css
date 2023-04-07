@@ -91,6 +91,11 @@ video {
     flex-direction: column;
   }
 
+  .service h3 {
+    font-size: var(--h2-font);
+
+  }
+
   .service img {
     margin-bottom: 18px;
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 // Style
 import './home.css';
 
@@ -46,17 +47,19 @@ function Home() {
     ]
 
 
-const scroll = () => {
-if (document.getElementById("testimony-cards").scrollWidth - document.getElementById("testimony-cards").scrollLeft <= document.getElementById("testimony-cards").clientWidth * 1.25) {
-    document.getElementById("testimony-cards").scroll(0, 0);
 
-} else {
-    document.getElementById("testimony-cards").scrollBy(240, 0);
-}
+//     const testr = document.getElementById("testimony-cards");
+// const scroll = () => {
+// if (testr.scrollWidth - testr.scrollLeft <= testr.clientWidth * 1.25) {
+//     testr.scroll(0, 0);
 
-}
+// } else {
+//     testr.scrollBy(240, 0);
+// }
 
-    setInterval(scroll,3000);
+// }
+
+    // setInterval(scroll,3000);
 
 
     return (
@@ -70,7 +73,7 @@ if (document.getElementById("testimony-cards").scrollWidth - document.getElement
                 <button><Link style={{ color: 'unset', textDecoration: "none" }} to="/addfunds">START EARNING</Link></button>
             </div>
 
-            <video controls autoPla loop>
+            <video controls autoPlay loop>
                 <source src={homevid} type='video/mp4'></source>
             </video>
 
