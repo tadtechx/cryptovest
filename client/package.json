@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "cryptovest-9mgbsi46a-israelbasseyib-gmailcom.vercel.app",
+  "proxy": "cryptovest-nx6jtqi0e-israelbasseyib-gmailcom.vercel.app",
   "eslintConfig": {
     "extends": "react-app"
   },
