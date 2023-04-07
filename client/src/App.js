@@ -33,7 +33,7 @@ import axios from "axios";
 import "./App.css";
 
 
-axios.defaults.baseURL = "./";
+// axios.defaults.baseURL = "./";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
