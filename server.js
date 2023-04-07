@@ -7,7 +7,9 @@ const users = require("./routes/api/users");
 const transactions = require("./routes/api/transactions");
 
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
