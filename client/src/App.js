@@ -33,7 +33,7 @@ import axios from "axios";
 import "./App.css";
 
 
-axios.defaults.baseURL = "cryptovest-12gfj8x1q-israelbasseyib-gmailcom.vercel.app";
+axios.defaults.baseURL = "https://cryptovest-sigma.vercel.app/";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
